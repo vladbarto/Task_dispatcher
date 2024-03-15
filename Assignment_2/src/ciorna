@@ -1,0 +1,18 @@
+Din server
+@Override
+    public void run() {
+        while(true) {
+            try {
+                if(null != tasks.peek()) {
+                    Thread.sleep((tasks.peek().getServiceTime() + 1)*1000); //primul factor da numarul de secunde.
+                    // *1000 e ca sa transform acest numar in milisecs
+
+                    //daca ala pleaca de la coada, scadem timpul de asteptare
+                    waitingPeriod.addAndGet(-tasks.peek().getServiceTime());
+                    tasks.poll();
+                }
+            } catch (InterruptedException e) {
+                //throw new RuntimeException(e);
+            }
+        }
+    }
