@@ -16,7 +16,7 @@ Possible operations:
 ![animation](./Media/animation.png)
 
 ## Modules
-The following packages can be found under `src`:
+The following packages can be found under `src`, in `Task_dispatcher` folder:
 - `BusinessLogic` (implements the logic aka backend of the program)
 - `GUI` package (takes care of Animation and Simulation)
 - `Models` package (contains Server and Task classes)
